@@ -1,4 +1,3 @@
-import 'package:dev_quiz/core/app_colors.dart';
 import 'package:dev_quiz/core/app_gradients.dart';
 import 'package:dev_quiz/core/app_text_styles.dart';
 import 'package:dev_quiz/home/widgets/score_car/score_card_widget.dart';

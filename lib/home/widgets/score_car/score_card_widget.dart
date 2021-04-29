@@ -7,42 +7,45 @@ class ScoreCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Container(
         height: 136,
         decoration: BoxDecoration(
             color: AppColors.white, borderRadius: BorderRadius.circular(20)),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              flex: 1,
-              child: Container(
-                height: 80,
-                width: 80,
-                child: ChartWidget(),
-              ),
-            ),
-            Expanded(
-              flex: 3,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 24),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Vamos Começar',
-                      style: AppTextStyles.heading,
-                    ),
-                    Text('Complete todos os desafios e avance em conhecimento',
-                    style: AppTextStyles.body,
-                    ),
-                  ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                flex: 1,
+                child: Container(
+                  height: 80,
+                  width: 80,
+                  child: ChartWidget(),
                 ),
               ),
-            )
-          ],
+              Expanded(
+                flex: 3,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Vamos Começar',
+                        style: AppTextStyles.heading,
+                      ),
+                      Text('Complete todos os desafios e avance em conhecimento',
+                      style: AppTextStyles.body,
+                      ),
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

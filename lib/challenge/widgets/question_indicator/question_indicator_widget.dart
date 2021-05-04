@@ -1,39 +1,37 @@
+import 'package:dev_quiz/core/app_text_styles.dart';
+import 'package:dev_quiz/shared/widgets/progress_indicator/progress_indicator_widget.dart';
 import 'package:flutter/material.dart';
-
-import 'package:devquiz/core/app_text_styles.dart';
-import 'package:devquiz/shared/widgets/progress_indicator/progress_indicator_wizard.dart';
 
 class QuestionIndicatorWidget extends StatelessWidget {
   final int currentPage;
   final int length;
-  const QuestionIndicatorWidget({
-    Key? key,
-    required this.currentPage,
-    required this.length,
-  }) : super(key: key);
+  const QuestionIndicatorWidget({Key? key, required this.currentPage, required this.length}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Container(
+    return Container(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
-          children: [
+          children:[
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [                
+              Text(
+                // ignore: unnecessary_brace_in_string_interps
+                "Questão ${currentPage}", 
+                style: AppTextStyles.body,
+                ), 
                 Text(
-                  "Questão $currentPage ",
+                  // ignore: unnecessary_brace_in_string_interps
+                  "de ${length}",  
                   style: AppTextStyles.body,
-                ),
-                Text("de $length ", style: AppTextStyles.body)
+                  ),
               ],
             ),
-            SizedBox(height: 16),
-            ProgressIndicatorWizard(
-              value: currentPage / length,
-            )
-          ],
+            SizedBox(height:16),
+            ProgressIndicatorWidget(value: currentPage / length),
+          ]        
         ),
       ),
     );

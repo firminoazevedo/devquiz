@@ -1,7 +1,9 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/cupertino.dart';
 
-class ChallangeController {
-  final currentPageNotifier = ValueNotifier<int>(1);
+class ChallengeContorler{
+  final currentPageNotifier = ValueNotifier<int>(1); 
   int get currentPage => currentPageNotifier.value;
-  set currentPage(int value) => currentPageNotifier.value = value;
+  set currenPage(int value) => currentPageNotifier.value = value;
+
+  int anwserRight = 0;
 }

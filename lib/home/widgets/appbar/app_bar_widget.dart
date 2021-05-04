@@ -1,8 +1,7 @@
-import 'package:dev_quiz/core/app_config.dart';
+import 'package:dev_quiz/Home/widgets/score_card/score_card_widget.dart';
 import 'package:dev_quiz/core/core.dart';
-import 'package:dev_quiz/home/widgets/scorecard/scorecard_widget.dart';
 import 'package:dev_quiz/shared/models/user_model.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class AppBarWidget extends PreferredSize {
   final UserModel user;
@@ -14,38 +13,33 @@ class AppBarWidget extends PreferredSize {
               child: Stack(
                 children: [
                   Container(
-                    decoration: BoxDecoration(gradient: AppGradients.linear),
-                    height: 161,
-                    width: double.maxFinite,
                     padding: const EdgeInsets.symmetric(horizontal: 20),
+                    height: 161,                      
+                    width: double.maxFinite,
+                    decoration: BoxDecoration(gradient: AppGradients.linear),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // Text("Olá, Daniel", style: AppTextStyles.title),
-                        Text.rich(
-                          TextSpan(
-                              text: "Olá, ",
-                              style: AppTextStyles.title,
-                              children: [
-                                TextSpan(
-                                    text: user.name,
-                                    style: AppTextStyles.titleBold)
-                              ]),
-                        ),
+                        Text.rich(TextSpan(
+                            text: "Olá, ",
+                            style: AppTextStyles.title,
+                            children: [
+                              TextSpan(
+                                  text: user.name,
+                                  style: AppTextStyles.titleBold)
+                            ])),
                         Container(
-                          height: 58,
-                          width: 58,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.fromBorderSide(BorderSide(
-                                  color: AppColors.purple, width: 2)),
+                            width: 58,
+                            height: 58,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100),
                               image: DecorationImage(
-                                  image: NetworkImage(user.photoUrl))),
-                        )
+                                  image: NetworkImage(user.photoUrl)),
+                            ))
                       ],
                     ),
                   ),
-                  Align(alignment: Alignment(0, 1), child: ScoreCardWidget())
+                  Align(alignment: Alignment(0.0, 1.0),child: ScoreCardWidget(percent: user.score/100,))
                 ],
               ),
             ));

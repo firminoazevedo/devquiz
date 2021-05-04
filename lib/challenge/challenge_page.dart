@@ -1,3 +1,4 @@
+import 'package:dev_quiz/challenge/challenge_controller.dart';
 import 'package:dev_quiz/challenge/next_button/next_button_widget.dart';
 import 'package:dev_quiz/challenge/widgets/quiz/quiz_widget.dart';
 import 'package:dev_quiz/challenge/widgets/quiz_indicator/quiz_indicator_widget.dart';
@@ -12,6 +13,8 @@ class ChallengePage extends StatefulWidget {
 }
 
 class _ChallengePageState extends State<ChallengePage> {
+  final controller = ChallangeController();
+  final pageController = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +27,10 @@ class _ChallengePageState extends State<ChallengePage> {
               IconButton(onPressed: (){
                 Navigator.pop(context);
               }, icon: Icon(Icons.close)),
-              QuestionIndicatorWidget(),
+              QuestionIndicatorWidget(
+                currentPage: controller.currentPage,
+                      length: widget.questions.length
+              ),
             ],
           )),
         preferredSize: Size.fromHeight(78),),

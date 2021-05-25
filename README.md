@@ -9,17 +9,16 @@ Esta aplicação pretende ser um Quiz para que os programadores intensifiquem os
 <br>
 
 <h2 align="center">Layout 🎨</h2>
+<p align="center">
+   O layout foi desenvolvido por <a href="https://instagram.com/tiagoluchtenberg">Tiago Luchtenberg</a>, e você pode acessa-lo no Figma:
 
-   <p align="center">
-      O layout foi desenvolvido por <a href="https://instagram.com/tiagoluchtenberg">Tiago Luchtenberg</a>, e você pode acessa-lo no Figma:
+- <a href="https://www.figma.com/file/XaC3pgD1B0iLSWLTsUqxIe/DevQuiz-(Copy)?node-id=0%3A1">Mobile</a> 📱
 
-   - <a href="https://www.figma.com/file/XaC3pgD1B0iLSWLTsUqxIe/DevQuiz-(Copy)?node-id=0%3A1">Mobile</a> 📱
-
-   <p align="center">
-    <img src="./preview/dev_quiz.gif" width="200">
-    <img src="./preview/congrats.jpg" width="200">
-   </p>
-   </p>
+<p align="center">
+   <img src="./preview/dev_quiz.gif" width="200">
+   <img src="./preview/congrats.jpg" width="200">
+</p>
+</p>
 
    ## Packages utilizados
 
